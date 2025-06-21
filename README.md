@@ -45,18 +45,38 @@ LANGSMITH_API_KEY=lsv2_...
 
 ## Set Up Poetry:
 
+Install `pyenv`
+
+```sh
+brew install pyenv
+```
+
+Configure `~/.zshrc` file to initialize environment variables 
+```sh
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(pyenv init --path)"' >> ~/.zshrc
+```
+
+Install and switch to `python@3.11.9` by using `pyenv`
+
+```sh
+pyenv install 3.11.9
+pyenv local 3.11.9
+```
+
 Poetry manages dependencies for the agent service. Install it with:
 
 
 ```sh
-pip install poetry
+pyenv exec pip install poetry
 ```
 
 Verify the installation by running:
 
 
 ```sh
-poetry --version
+pyenv exec poetry --version
 ```
 
 ## Development
